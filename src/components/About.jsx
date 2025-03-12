@@ -73,7 +73,7 @@ const About = () => {
         />
 
         <div className="about-subtext">
-          <p>A multidisciplinary developer and designer with a passion for web, mobile, 3D, and visual storytelling, I turn simple ideas into immersive digital experiences.</p>
+          <p> As a multidisciplinary developer and designer passionate about web, mobile, 3D, and visual storytelling, I turn simple ideas into immersive digital experiences.</p>
         </div>
       </div>
 
@@ -95,5 +95,4 @@ const About = () => {
   );
 };
 
-export default About;
 export default About;

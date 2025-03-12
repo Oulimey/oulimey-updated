@@ -40,9 +40,6 @@ const About = () => {
   }, []);
 
   useGSAP(() => {
-    // Check if we're on mobile
-    const isMobile = window.innerWidth < 768;
-    
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
@@ -69,9 +66,6 @@ const About = () => {
       onContextMenu={(e) => e.preventDefault()}
     >
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <p className="font-general text-sm uppercase md:text-[10px]">
-          Welcome to Oulimey
-        </p>
       
         <AnimatedTitle
           title="<b>W</b><b>e<b/>b, <b>M</b>obil<b>e<b/>, 3<b>D</b> &amp; Gr<b>a</b>phi<b>c</b>s<br /><b>A</b>ll in <b>o</b>n<b>e<b/> cre<b>a</b>tiv<b>e<b/> min<b>d</b>"
@@ -83,10 +77,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* Added positioning class to manage mobile layout */}
-      <div className="h-dvh w-screen relative" id="clip">
+      <div className="h-dvh w-screen" id="clip">
         <div 
-          className="mask-clip-path about-image absolute"
+          className="mask-clip-path about-image"
           onContextMenu={(e) => e.preventDefault()}
         >
           <img
@@ -98,31 +91,9 @@ const About = () => {
           />
         </div>
       </div>
-      
-      {/* Add CSS for proper mobile styling */}
-      <style jsx>{`
-        @media screen and (max-width: 767px) {
-          #clip {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 40vh; /* Add margin below to prevent content overlap */
-          }
-          
-          .mask-clip-path {
-            z-index: 2;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-          
-          .about-subtext {
-            position: relative;
-            z-index: 3; /* Ensure text stays above image */
-          }
-        }
-      `}</style>
     </div>
   );
 };
 
+export default About;
 export default About;
